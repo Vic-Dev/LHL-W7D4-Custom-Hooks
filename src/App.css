@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.App-mouse {
+  color: aqua;
+  position: absolute;
+  white-space: nowrap;
+  user-select: none;
+  transform: translate3d(-100%, -100%, 0);
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

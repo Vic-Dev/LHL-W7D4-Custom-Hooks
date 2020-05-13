@@ -14,9 +14,8 @@ test('it should return current x and y mouse positions', () => {
   const { result } = renderHook(() => useMousePosition());
   const { getByText } = render(<App />);
   act(() => {
-    fireEvent.mouseMove(getByText(/Hello World/i));
     fireEvent(
-      getByText(/Hello World/i),
+      getByText(/Hello Meme World/i),
       new MouseEvent('mousemove', {
         bubbles: true,
         cancelable: true,
