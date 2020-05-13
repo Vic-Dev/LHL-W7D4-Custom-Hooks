@@ -9,13 +9,10 @@ function App() {
   const { count, setCount } = useCount();
   const { x, y } = useMousePosition();
 
-  // console.log(x, y);
+  console.log(x, y);
 
   const scrollToMemes = (ev) => {
-    document.getElementById('memes').scrollIntoView({
-      behavior: 'smooth', // smooth scroll
-      // block: 'start' // the upper border of the element will be aligned at the top of the visible part of the window of the scrollable area.
-    });
+    document.getElementById('memes').scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -31,7 +28,7 @@ function App() {
       </header>
       <section id="memes">
         <Subreddit subreddit="ProgrammerHumor" defaultSearch="JavaScript" />
-        <Subreddit subreddit="aww" defaultSearch="Cats" />
+        <Subreddit subreddit="aww" defaultSearch="Cat" />
       </section>
     </div>
   );
