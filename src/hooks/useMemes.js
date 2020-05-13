@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useMemes = () => {
-  const [search, setSearch] = useState('JavaScript');
+const useMemes = ({ defaultSearch, subreddit }) => {
+  const [search, setSearch] = useState(defaultSearch);
   const [memes, setMemes] = useState([]);
 
   const formatMemes = (data) => {
@@ -13,7 +13,7 @@ const useMemes = () => {
 
   useEffect(() => {
     // axios.get('https://api.imgflip.com/get_memes')
-    axios.get(`https://www.reddit.com/r/ProgrammerHumor/search.json?q=${search}&sort=top&t=all&restrict_sr=true`)
+    axios.get(`https://www.reddit.com/r/${subreddit}/search.json?q=${search}&sort=top&t=all&restrict_sr=true`)
       .then((res) => {
         console.log('data', res.data.data.children);
         const formattedMemes = formatMemes(res.data.data.children);

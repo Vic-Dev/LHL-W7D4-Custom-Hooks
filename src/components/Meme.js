@@ -4,8 +4,8 @@ import './Meme.css';
 const Meme = ({ title, url }) => {
   return (
     <li>
-      <h3>{title}</h3>
-      <img src={url} width="500" />
+      <h4>{title}</h4>
+      <img src={url} />
     </li>
   );
 };

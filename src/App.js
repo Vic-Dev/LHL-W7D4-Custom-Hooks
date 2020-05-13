@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import MemesList from './components/MemeList';
+import Subreddit from './components/Subreddit';
+
 import useCount from './hooks/useCount';
-import useMemes from './hooks/useMemes';
 import useMousePosition from './hooks/useMousePosition';
 
 function App() {
-  const [value, setValue] = useState('JavaScript');
   const { count, setCount } = useCount();
-  const { memes, search, setSearch } = useMemes();
   const { x, y } = useMousePosition();
 
-  console.log(memes, x, y);
+  // console.log(x, y);
 
   const scrollToMemes = (ev) => {
     document.getElementById('memes').scrollIntoView({
@@ -32,15 +30,8 @@ function App() {
         <button className="App-button" onClick={scrollToMemes}><h2>Scroll to Memes?</h2></button>
       </header>
       <section id="memes">
-        <h1>{search} Memes</h1>
-        <form onSubmit={() => setSearch(value)}>
-          <label>
-            Search:
-            <input type="text" value={value} onChange={(ev) => setValue(ev.target.value)} />
-          </label>
-          <input type="submit" value="Search" />
-        </form>
-        <MemesList memes={memes} />
+        <Subreddit subreddit="ProgrammerHumor" defaultSearch="JavaScript" />
+        <Subreddit subreddit="aww" defaultSearch="Cats" />
       </section>
     </div>
   );
