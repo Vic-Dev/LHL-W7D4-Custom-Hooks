@@ -9,8 +9,8 @@ function App() {
   const { count, increment, decrement } = useCount();
   const { x, y } = useMousePosition();
 
-  console.log(x, y);
-  console.log('update');
+  // console.log(x, y);
+  // console.log('update');
 
   const scrollToMemes = (ev) => {
     document.getElementById('memes').scrollIntoView({ behavior: 'smooth' });

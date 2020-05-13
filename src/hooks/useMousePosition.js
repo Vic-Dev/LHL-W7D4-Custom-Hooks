@@ -5,8 +5,8 @@ const useMousePosition = () => {
 
   useEffect(() => {
     const mouseMove = (event) => {
-      const x = event.clientX + window.scrollX;
-      const y = event.clientY + window.scrollY;
+      const x = event.clientX + window.pageXOffset;
+      const y = event.clientY + window.pageYOffset;
       setCoords({ x, y });
     };
     document.addEventListener('mousemove', mouseMove);
