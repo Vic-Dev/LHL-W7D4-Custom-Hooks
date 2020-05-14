@@ -30,8 +30,7 @@ function App() {
       </header>
       <section id="memes">
         <Subreddit subreddit="ProgrammerHumor" defaultSearch="JavaScript" />
-        {/* <Subreddit subreddit="aww" defaultSearch="Cat" /> */}
-        <Subreddit subreddit="funny" defaultSearch="Panda" />
+        <Subreddit subreddit="aww" defaultSearch="Cat" />
       </section>
     </div>
   );
