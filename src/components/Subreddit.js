@@ -7,11 +7,16 @@ const Subreddit = ({ subreddit, defaultSearch }) => {
   const [value, setValue] = useState(defaultSearch);
   const { memes, search, setSearch } = useMemes({ defaultSearch, subreddit });
 
+  const onSubmit = (ev) => {
+    ev.preventDefault();
+    setSearch(value);
+  };
+
   return (
     <div>
       <h1>{subreddit}</h1>
       <h3>{search} Memes</h3>
-      <form onSubmit={() => setSearch(value)}>
+      <form onSubmit={onSubmit}>
         <label>
           Search:
             <input type="text" value={value} onChange={(ev) => setValue(ev.target.value)} />
